@@ -7,12 +7,10 @@ def calculator(result,operator,operand):
             return  result-operand
     elif operator == "/":
             if operand == 0:
-                 print ( "cannot be divide by zero")
-                 return None
+                 return "cannot be divide by zero"
             return  result / operand
     else:
-         print( "Invalid operator")
-         return None
+         return "Invalid operator"
 
 
 result = 0
@@ -29,7 +27,12 @@ while True:
         #  how will i block it from seeing this when it see undo i dont know who to go about that 
     # how i dont u=know who to make it previous number be only int like for example / 0 mean cannt be divide by zero but after it print this he does not have to store it in previous result and when i mutiply or divide again it shpuuld still the previus result remain in result 
     operator, operand = value.split()
-    result = calculator(result, operator,int(operand))
-    prev_result.append(result)
-    print(f"result: {result}")
+    calculate = calculator(result, operator,int(operand))
+    if isinstance(calculate,str): 
+        print(f"result: {calculate}") 
+    else:
+        prev_result.append(result)
+        result = calculate
+        print(f"result: {result}")
+        #  result should be what every will append like when i clicjk undo result should be 5 not 10 bn which was trhe formal result how will i go about thaty
 
