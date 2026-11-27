@@ -1,0 +1,2 @@
+word = ["boy"]
+boys = ["mn"]
